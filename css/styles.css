@@ -86,7 +86,12 @@ a:visited {
 .outlined {
     outline: 0.25vmin solid var(--col-base-border)
 }
-
+.boxed {
+    box-shadow: 0.5vmin 0.5vmin var(--col-shadow);
+}
+.boxed-inset {
+    box-shadow: inset 0.5vmin 0.5vmin var(--col-shadow);
+}
 .material-symbols-outlined {
     font-variation-settings:
         'FILL' 0,
@@ -96,7 +101,6 @@ a:visited {
 }
 
 div.base {
-    overflow-y: auto;
     height: 92vh;
     margin-left: 4vw;
     margin-right: 4vw;
@@ -105,28 +109,19 @@ div.base {
     padding: 2vmin;
     background-color: var(--col-basewin);
     box-sizing: border-box;
-    box-shadow: inset 0.5vmin 0.5vmin var(--col-shadow);
 
     /* Animation */
     animation: slide-base 1s var(--easer) 0.1s both, flash_outline 250ms var(--easer) 0.1s both;
 }
 
-
-
 img.profilepic {
     width: calc(min(50%, 40vh));
     height: 100%;
     object-fit: cover;
-    box-shadow: 0.5vmin 0.5vmin var(--col-shadow);
     animation: profileintro 1s var(--easer) 0.2s both, flash_outline 1s var(--easer) 0.1s both;
 }
-
-img.link {
-    width: 4vmin;
-    height: 4vmin;
-    object-fit: cover;
-    font-weight: bolder;
-    animation: flash_outline 1s var(--easer) 0.2s both;
+.right {
+    text-align: right
 }
 
 
@@ -134,25 +129,25 @@ div.info {
     width: 100%;
     height: 100%;
     align-items: center;
-    text-align: justify;
+    /* text-align: justify; */
     padding-inline: 2vmin;
     align-self: center;
     justify-content: left;
     background-color: var(--col-darker);
-    box-shadow: 0.5vmin 0.5vmin var(--col-shadow);
     animation: infointro 1s var(--easer) 0.4s both, flash_outline 0.5s var(--easer) 0.5s both;
     overflow-y: auto
 }
 
-
 div.linkbox {
     width: 100%;
     background-color: var(--col-darkest);
-    box-shadow: inset 0.5vmin 0.5vmin var(--col-shadow);
-    animation: linkreveal 0.4s var(--easer) 0.8s both, flash_outline 0.5s var(--easer) 0.8s both;
-    line-break: loose;
-    padding-inline: 2vmin;
+    animation: linksreveal 0.4s var(--easer) 0.8s both, flash_outline 0.5s var(--easer) 0.8s both;
+    
+}
+div.links {
+    width: 100%;
     padding: 2vmin;
+    animation: links 0.5s var(--easer) 0.9s both;
 }
 
 
@@ -209,7 +204,7 @@ div.linkbox {
     }
 }
 
-@keyframes linkreveal {
+@keyframes linksreveal {
     0% {
         opacity: 0%;
         /* background-color: white; */
@@ -218,5 +213,11 @@ div.linkbox {
     80% {
         box-shadow: inset 0px 0px 0vmin 0vmin var(--col-shadow);
 
+    }
+}
+
+@keyframes links {
+    0% {
+        transform: translate(-0.5vmin, -0.5vmin)
     }
 }
