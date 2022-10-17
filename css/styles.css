@@ -1,6 +1,7 @@
 :root {
     --col-bloom: rgb(253, 228, 255);
     --col-text-1: #f6caca;
+    --col-links:#feffe8;
     --col-base-border: #4c5b8d;
     --col-background: #614E46;
     --col-basewin: #473933;
@@ -16,7 +17,7 @@
 
 .row {
     display: flex;
-    height: 40%;
+    height: 100%;
     width: 100%;
     flex-direction: row;
     align-content: flex-start;
@@ -54,7 +55,9 @@ img {
 
 body {
     background-color: var(--col-background);
-    color: var(--col-text-1)
+    color: var(--col-text-1);
+    font-family: Helvetica;
+    font-weight: normal;
 }
 
 div.base {
@@ -74,6 +77,12 @@ div.base {
     animation: slide-base 1s var(--easer) 0.1s both, flash_outline 250ms var(--easer) 0.1s both;
 }
 
+div.r1 {
+    height: 30vh;
+}
+
+
+
 img.profilepic {
     width: 40%;
     height: 100%;
@@ -84,15 +93,22 @@ img.profilepic {
     overflow: hidden
 }
 
+img.link {
+    width: 4vmin;
+    height: 4vmin;
+    object-fit: cover;
+    font-weight: bolder;
+    animation: flash_outline 1s var(--easer) 0.2s both;
+}
+
+
 div.info {
-    width: 80%;
+    width: 100%;
     height: 100%;
     align-items: center;
     text-align: justify;
     padding-inline: 2vmin;
     align-self: center;
-    font-family: Helvetica;
-    font-weight: bold;
     justify-content: left;
     /* font-size: 1em; */
     background-color: var(--col-darker);
@@ -115,7 +131,16 @@ div.linkbox {
     animation: linkreveal 0.4s var(--easer) 0.8s both, flash_outline 0.5s var(--easer) 0.8s both;
     overflow-y: auto;
     line-break: loose;
+    padding-inline: 2vmin;
 }
+
+a:link {
+    color:white;
+    font-weight: bolder;
+    text-decoration: none;
+}
+
+
 
 @keyframes slide-base {
     0% {
@@ -176,7 +201,7 @@ div.linkbox {
 @keyframes linkreveal {
     0% {
         opacity: 0%;
-        background-color: white;
+        /* background-color: white; */
     }
 
     80% {
