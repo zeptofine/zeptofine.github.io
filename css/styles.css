@@ -86,12 +86,15 @@ a:visited {
 .outlined {
     outline: 0.25vmin solid var(--col-base-border)
 }
+
 .boxed {
     box-shadow: 0.5vmin 0.5vmin var(--col-shadow);
 }
+
 .boxed-inset {
     box-shadow: inset 0.5vmin 0.5vmin var(--col-shadow);
 }
+
 .material-symbols-outlined {
     font-variation-settings:
         'FILL' 0,
@@ -109,17 +112,20 @@ div.base {
     padding: 2vmin;
     background-color: var(--col-basewin);
     box-sizing: border-box;
+    overflow-y: auto;
 
     /* Animation */
     animation: slide-base 1s var(--easer) 0.1s both, flash_outline 250ms var(--easer) 0.1s both;
 }
 
+
 img.profilepic {
-    width: calc(min(50%, 40vh));
+    width: calc(min(40%, 40vh));
     height: 100%;
     object-fit: cover;
-    animation: profileintro 1s var(--easer) 0.2s both, flash_outline 1s var(--easer) 0.1s both;
+    animation: profileintro 1s var(--easer) 0.2s both, flash_outline 500ms var(--easer) 0.2s both;
 }
+
 .right {
     text-align: right
 }
@@ -142,12 +148,13 @@ div.linkbox {
     width: 100%;
     background-color: var(--col-darkest);
     animation: linksreveal 0.4s var(--easer) 0.8s both, flash_outline 0.5s var(--easer) 0.8s both;
-    
+    overflow-y: auto;
+
 }
+
 div.links {
     width: 100%;
     padding: 2vmin;
-    animation: links 0.5s var(--easer) 0.9s both;
 }
 
 
@@ -156,8 +163,6 @@ div.links {
     0% {
         background-color: var(--col-background);
         box-shadow: inset 0px 0px var(--col-background);
-        /* transform: translate(0, 40vh);
-        height: 10vh; */
     }
 }
 
@@ -207,17 +212,10 @@ div.links {
 @keyframes linksreveal {
     0% {
         opacity: 0%;
-        /* background-color: white; */
     }
 
     80% {
         box-shadow: inset 0px 0px 0vmin 0vmin var(--col-shadow);
 
-    }
-}
-
-@keyframes links {
-    0% {
-        transform: translate(-0.5vmin, -0.5vmin)
     }
 }
