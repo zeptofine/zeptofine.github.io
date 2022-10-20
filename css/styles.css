@@ -103,12 +103,13 @@ a:visited {
         'opsz' 48
 }
 
-div.base {
-    height: 92vh;
-    margin-left: 4vw;
-    margin-right: 4vw;
-    margin-top: 4vh;
-    margin-bottom: 4vh;
+
+#base {
+    height: 94vh;
+    margin-left: 2vw;
+    margin-right: 2vw;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
     padding: 2vmin;
     background-color: var(--col-basewin);
     box-sizing: border-box;
