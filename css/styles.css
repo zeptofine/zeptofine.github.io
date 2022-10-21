@@ -10,7 +10,10 @@
     --col-darkest: #292422;
     --easer: cubic-bezier(0.19, 1, 0.22, 1)
 }
-
+@font-face {
+    font-family: Roboto;
+    src: url(../fonts/Roboto-Regular.ttf);
+}
 /*   To reference these: var(*)            */
 /*   var(--col-background); var(--easer)   */
 
@@ -18,8 +21,10 @@
 body {
     background-color: var(--col-background);
     color: var(--col-text-1);
-    font-family: Helvetica;
-    font-weight: normal;
+    font-family: Roboto;
+    src: url(https://fonts.googleapis.com/css?family=Roboto&text=Hello);
+    /* font-family: Helvetica; */
+    /* font-weight: normal; */
 }
 
 div {
@@ -58,8 +63,8 @@ a:visited {
     height: 100%;
     width: 100%;
     flex-direction: row;
-    align-content: flex-start;
-    align-items: flex-start;
+    align-content: center;
+    align-items: center;
     justify-content: flex-end;
     flex-wrap: nowrap;
     gap: 2vmin
@@ -70,7 +75,8 @@ a:visited {
     flex-direction: column;
     align-content: flex-start;
     align-items: flex-start;
-    justify-content: start;
+    justify-content: flex-start;
+    justify-items: flex-start;
     gap: 2vmin
 }
 
@@ -105,11 +111,11 @@ a:visited {
 
 
 #base {
-    height: 94vh;
-    margin-left: 2vw;
-    margin-right: 2vw;
-    margin-top: 2vh;
-    margin-bottom: 2vh;
+    height: 96vh;
+    margin-left: 4vw;
+    margin-right: 4vw;
+    margin-top: 4vh;
+    margin-bottom: 4vh;
     padding: 2vmin;
     background-color: var(--col-basewin);
     box-sizing: border-box;
@@ -120,21 +126,22 @@ a:visited {
 }
 
 
-img.profilepic {
+#profilepic {
     width: calc(min(40%, 40vh));
-    height: 100%;
+    height: 40vh;
     object-fit: cover;
     animation: profileintro 1s var(--easer) 0.2s both, flash_outline 500ms var(--easer) 0.2s both;
 }
 
 .right {
-    text-align: right
+    text-align: right;
+    align-items: right;
 }
 
 
-div.info {
+#info {
     width: 100%;
-    height: 100%;
+    height: 40vh;
     align-items: center;
     /* text-align: justify; */
     padding-inline: 2vmin;
@@ -145,8 +152,9 @@ div.info {
     overflow-y: auto
 }
 
-div.linkbox {
+#linkbox {
     width: 100%;
+    height: 100%;
     background-color: var(--col-darkest);
     animation: linksreveal 0.4s var(--easer) 0.8s both, flash_outline 0.5s var(--easer) 0.8s both;
     overflow-y: auto;
@@ -159,7 +167,7 @@ div.links {
 }
 
 
-
+/* 
 @keyframes slide-base {
     0% {
         background-color: var(--col-background);
@@ -219,4 +227,4 @@ div.links {
         box-shadow: inset 0px 0px 0vmin 0vmin var(--col-shadow);
 
     }
-}
+} */
