@@ -77,7 +77,7 @@ a:visited {
     align-items: flex-start;
     justify-content: flex-start;
     justify-items: flex-start;
-    gap: 2vmin
+    gap: 2vmin;
 }
 
 .hover-exp {
@@ -109,9 +109,17 @@ a:visited {
         'opsz' 48
 }
 
+#container {
+    position: absolute;
+    left: 2vmin;
+    top: 2vmin;
+    width: calc(100% - 4vmin);
+    height: calc(max(100% - 4vmin, 540px));
+}
 
 #base {
-    height: 96vh;
+    height: calc(min(90%, 720px));
+    width: calc(min(90%, 900px));
     margin-left: 4vw;
     margin-right: 4vw;
     margin-top: 4vh;
@@ -120,7 +128,9 @@ a:visited {
     background-color: var(--col-basewin);
     box-sizing: border-box;
     overflow-y: auto;
-
+    align-content: center;
+    align-items: center;
+    align-self: center;
     /* Animation */
     animation: slide-base 1s var(--easer) 0.1s both, flash_outline 250ms var(--easer) 0.1s both;
 }
@@ -128,7 +138,7 @@ a:visited {
 
 #profilepic {
     width: calc(min(40%, 40vh));
-    height: 40vh;
+    height: 100%;
     object-fit: cover;
     animation: profileintro 1s var(--easer) 0.2s both, flash_outline 500ms var(--easer) 0.2s both;
 }
@@ -141,7 +151,7 @@ a:visited {
 
 #info {
     width: 100%;
-    height: 40vh;
+    height: 100%;
     align-items: center;
     /* text-align: justify; */
     padding-inline: 2vmin;
@@ -167,7 +177,7 @@ div.links {
 }
 
 
-/* 
+
 @keyframes slide-base {
     0% {
         background-color: var(--col-background);
@@ -227,4 +237,4 @@ div.links {
         box-shadow: inset 0px 0px 0vmin 0vmin var(--col-shadow);
 
     }
-} */
+}
