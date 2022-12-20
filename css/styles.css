@@ -13,12 +13,12 @@
     --border-radius: 2vmin;
     --outline-thickness: 0.25vmin
 }
+/*   To reference these: var(*)            */
+/*   var(--col-background); var(--easer)   */
 @font-face {
     font-family: Roboto;
     src: url(../fonts/Roboto-Regular.ttf);
 }
-/*   To reference these: var(*)            */
-/*   var(--col-background); var(--easer)   */
 
 
 body {
@@ -31,11 +31,13 @@ body {
 }
 
 div {
-    border-radius: 2vmin
+    -webkit-border-radius: 2vmin;
+    border-radius: 2vmin;
 }
 
 img {
-    border-radius: 2vmin
+    -webkit-border-radius: 2vmin;
+    border-radius: 2vmin;
 }
 
 button {
@@ -83,6 +85,10 @@ a:visited {
     justify-items: flex-start;
     gap: 2vmin;
 }
+.right {
+    text-align: right;
+    align-items: right;
+}
 
 .hover-exp {
     transition: 1s cubic-bezier(0.19, 1, 0.22, 1) all;
@@ -113,6 +119,14 @@ a:visited {
         'opsz' 48
 }
 
+
+tr {
+    border: var(--outline-thickness) solid var(--col-sub-border);
+}
+
+th {
+    width: 50%
+}
 #container {
     position: absolute;
     left: 2vmin;
@@ -148,10 +162,6 @@ a:visited {
     background-color: black;
 }
 
-.right {
-    text-align: right;
-    align-items: right;
-}
 
 
 #info {
@@ -168,9 +178,10 @@ a:visited {
 }
 
 #buttonbox {
-    height: 10%;
+    height: 20%;
     width: 100%;
     justify-content: space-evenly;
+    background-color: var(--col-darker);
 }
 
 
@@ -192,15 +203,6 @@ a:visited {
     align-items: center;
     align-self: center;
     align-content: center;
-}
-
-
-tr {
-    border: var(--outline-thickness) solid var(--col-sub-border);
-}
-
-th {
-    width: 50%
 }
 @keyframes slide-base {
     0% {
