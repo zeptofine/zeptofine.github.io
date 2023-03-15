@@ -9,10 +9,11 @@
     --col-shadow: #1b1714;
     --col-darker: #2e261f;
     --col-darkest: #292422;
-    --easer: cubic-bezier(0.19, 1, 0.22, 1)
+    --easer: cubic-bezier(0.19, 1, 0.22, 1);
     --border-radius: 2vmin;
     --outline-thickness: 0.25vmin
 }
+
 /*   To reference these: var(*)            */
 /*   var(--col-background); var(--easer)   */
 @font-face {
@@ -47,10 +48,12 @@ button {
     font-weight: bold;
 }
 
-
 hr {
-    opacity: 20%;
+    height: 2px;
+    background-color: var(--col-sub-border);
+    border: none;
 }
+
 
 a:link {
     color: var(--col-links);
@@ -85,6 +88,7 @@ a:visited {
     justify-items: flex-start;
     gap: 2vmin;
 }
+
 .right {
     text-align: right;
     align-items: right;
@@ -127,6 +131,7 @@ tr {
 th {
     width: 50%
 }
+
 #container {
     position: absolute;
     left: 2vmin;
@@ -204,6 +209,7 @@ th {
     align-self: center;
     align-content: center;
 }
+
 @keyframes slide-base {
     0% {
         background-color: var(--col-background);
