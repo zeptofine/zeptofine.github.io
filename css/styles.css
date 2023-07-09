@@ -207,6 +207,9 @@ a:visited {
 .nowrap {
     white-space: nowrap;
 }
+.clip-hidden {
+    overflow: hidden;
+}
 
 #container {
     position: absolute;
@@ -315,6 +318,11 @@ a:visited {
 #PXSORTER {
     background-image: url("../images/pixelsorter.png");
     color: black;
+}
+
+#TH264 {
+    background-image: url("../images/TH264.png");
+    color: white;
 }
 
 #resetLayoutButton {
