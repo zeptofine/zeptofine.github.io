@@ -240,20 +240,13 @@ a:visited {
     width: calc(max(100%, 500px));
     height: 50%;
 }
-
 #profilepic {
-    width: 320px;
-    height: 320px;
+    width: calc(min(256px, 25%));
+    height: 256px;
     object-fit: cover;
     background-color: black;
     outline: var(--outline-thickness) solid white;
     animation: profileintro 1s var(--easer) 0.2s both, flash_outline 500ms var(--easer) 0.2s both;
-}
-
-#buttonbox {
-    height: 15%;
-    width: 100%;
-    justify-content: space-evenly;
 }
 
 
@@ -282,6 +275,12 @@ a:visited {
     align-items: center;
     align-self: center;
     justify-content: left;
+}
+
+#buttonbox {
+    height: 15%;
+    width: 100%;
+    justify-content: space-evenly;
 }
 
 #linksbox {
