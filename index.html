@@ -8,55 +8,94 @@
     <link rel="stylesheet" href="css/styles.css">
     <link rel="icon" href="images/favicon.png">
     <!-- google icons -->
-    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" /> -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 
 </head>
 
 <body>
-    <div id="container" class="column">
-        <div id="base" class="column outlined boxed-inset">
-            <div class="row">
-                <img id="profilepic" class="outlined boxed" src="images/SiteWall.png" title="Hey, that's my icon!"
-                    alt="profile picture lmao" decoding="async">
+    <base target="_blank">
+    <div id="container" class="row gapless">
+        <div id="base" class="row outlined boxed-inset fullheight gapless">
+            <div class="column fullheight fullwidth">
+                <div class="row">
+                    <img id="profilepic" src="images/SiteWall.png" title="Hey, that's my icon!"
+                        alt="profile picture lmao" decoding="async">
 
-                <div id="info" class="outlined boxed">
-                    <h2>Hi</h2>
-                    <hr>
-                    <p>I'm an amateur Python, Java, Shell scripter / programmer. </p>
-                    <p>I know <i>just</i> enough css and html to make this site.</p>
-                    <hr>
-                    <p>she / her / they / them</p>
-                    <p>I hope you enjoy your stay</p>
+                    <div id="info" class="outlined boxed-inset nowrap">
+                        <h2 id="hello">Hi</h2>
+                        <hr>
+                        <p>I'm an amateur Python, Java, Shell scripter / programmer. </p>
+                        <p>I know some html, css, and js (enough to make this site).</p>
+                        <hr>
+                        <p>she / her / they / them</p>
+                        <p>I hope you enjoy your stay</p>
+                    </div>
+                </div>
+                <div id="tablebox" class="outlined boxed-inset column fullheight">
+                    <div id="tablesdiv" class="gapless row fullheight">
+                        <div class="tables outlined boxed-inset sharp-top" data-name="Social">
+                            <table rules="rows">
+                                <tbody>
+                                    <tr>
+                                        <th>GitHub: </th>
+                                        <td><a href="https://github.com/zeptofine">zeptofine</a></td>
+                                    </tr>
+                                    <tr>
+                                        <th>Youtube: </th>
+                                        <td><a href="https://www.youtube.com/@zeptofine">Zeptofine</a></td>
+                                    </tr>
+                                    <tr>
+                                        <th>Discord: </th>
+                                        <td>zeptofine</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div id="linksbox" class="tables outlined boxed-inset sharp-top" data-name="Links">
+                            <button id="CIMUTILS" class="linkcell outlined-hovered"
+                                data-link="https://zeptofine.github.io/Console_Image_Utils"
+                                data-source="https://github.com/zeptofine/Console_Image_Utils">
+                                <table class="blurred-background boxed-inset" rules="rows">
+                                    <tbody>
+                                        <tr>
+                                            <th>Console_Image_Utils:</th>
+                                            <td>A set of utilities to help with managing images</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </button>
+                            <button id="PXSORTER" class="linkcell outlined-hovered"
+                                data-link="https://zeptofine.github.io/pixelsorter"
+                                data-source="https://github.com/zeptofine/pixelsorter">
+                                <table class="blurred-background boxed-inset" rules="rows">
+                                    <tbody>
+                                        <tr>
+                                            <th>Pixelsorter:</th>
+                                            <td>A small-ish pixelsorter script i made to learn.</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <!-- <div id="buttonbox" class="outlined boxed-inset row">
-                <button>Links</button>
-                <button>FAQ</button>
-                <button>Contact</button>
-            </div> -->
-            <div id="linkbox" class="outlined boxed-inset">
-                <table id="linktable" border=1 frame=void rules="rows" width="100%">
-                    <tbody>
-                        <tr>
-                            <th>GitHub: </th>
-                            <td><a href="https://github.com/zeptofine">zeptofine</a></td>
-                        </tr>
-                        <tr>
-                            <th>Youtube: </th>
-                            <td><a href="https://www.youtube.com/@zeptofine">Zeptofine</a></td>
-                        </tr>
-                        <!-- I don't know if I should broadcast my twitter -->
-                        <!-- <tr>
-                            <th>Twitter: </th>
-                            <td><a href="https://twitter.com/zeptofine">@zeptofine</a></td>
-                        </tr> -->
-                        <tr>
-                            <th>Discord: </th>
-                            <td>zeptofine</td>
-                        </tr>
-                    </tbody>
-                </table>
+            <div id="embedDiv" class="column sharp fullheight">
+                <div class="row fullwidth">
+                    <button id="resetLayoutButton" class="row">
+                        <span class="material-symbols-outlined">
+                            first_page
+                        </span>
+                    </button>
+                    <a id="source"></a>
+                </div>
+                <iframe id="embedframe" src="" class="boxed-inset" sandbox="allow-scripts allow-popups">
+                </iframe>
             </div>
         </div>
     </div>
+
+    <script src="scripts/main.js"></script>
+    <script src="scripts/links.js"></script>
 </body>
