@@ -7,5 +7,3 @@ window.mobileCheck = function () {
 if (window.mobileCheck()) {
     document.getElementById("linksbox").remove();
 }
-console.log(window.mobileCheck());
-console.log(navigator.userAgent || navigator.vendor || window.opera);

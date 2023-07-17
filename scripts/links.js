@@ -1,71 +1,66 @@
 
-class LinksHandler {
-    constructor(container, links, iframe, embedDiv, resetter) {
-        this.container = container;
-        this.links = links;
-        this.iframe = iframe;
-        this.div = embedDiv;
-        this.resetter = resetter;
-        this.sourceLink = document.getElementById("source");
-        this.linkParagraph = document.getElementById("link");
-        this.gap = getComputedStyle(document.querySelector(':root')).getPropertyValue('--gap');
+
+const container = document.getElementById("base");
+const links = document.getElementById("linksbox").getElementsByClassName("linkcell");
+const resetbutton = document.getElementById("resetLayoutButton");
+const iframe = document.getElementById("embedframe");
+const div = document.getElementById("embedbox");
+
+const sourceLink = document.getElementById("source");
+const linkParagraph = document.getElementById("link");
 
 
-        // get button links and bind onclick
-        var button;
-        for (let i = 0; i < this.links.length; i++) {
-            button = this.links[i];
-            if ("link" in button.dataset) {
-                console.log(button.dataset.link);
-                button.onclick = () => this.selectSrc(i);
-            }
-        }
-        this.resetter.onclick = () => this.revert();
+function selectSrc(idx) {
+
+
+    let button = links[idx];
+    let dataset = button.dataset;
+
+    div.style.width = "100%";
+    div.style.opacity = "1";
+    div.style.marginLeft = "var(--gap)";
+    if (iframe.src != links[idx].dataset.link) {
+        iframe.src = dataset.link;
     }
 
-    selectSrc(idx) {
-        console.log("selected source: ", this.links[idx]);
-        let button = this.links[idx];
-        let dataset = button.dataset;
+    if ("source" in dataset) {
+        pulseanimation(sourceLink, "flash-inner");
+        sourceLink.href = dataset.source;
 
-        this.div.style.width = "100%";
-        this.div.style.opacity = "1";
-        
-        this.iframe.src = dataset.link;
-
-        if ("source" in dataset) {
-            this.sourceLink.href = dataset.source;
-            this.sourceLink.text = this.sourceLink.href;
-            this.sourceLink.style.height = "";
-        } else {
-            this.sourceLink.style.height = "0%";
-        }
-
-        this.iframe.style.width = "calc(100% - " + this.gap + ")"; // gross
-        this.iframe.style.opacity = "1";
-        this.iframe.style.marginLeft = this.gap;
-
-        this.container.style.width = "calc(min(100%, 1350px))";
-
+        sourceLink.text = sourceLink.href;
+        sourceLink.style.height = "";
+    } else {
+        sourceLink.style.height = "0%";
     }
+    iframe.style.opacity = "1";
 
-    revert() {
-        this.iframe.style.width = "";
-        this.iframe.style.opacity = "0";
-        this.iframe.style.marginLeft = "";
+    container.style.width = "calc(min(100%, 1350px))";
+    
+    console.log("selected source: ", links[idx]);
 
-        this.container.style.width = "";
-        this.div.style.width = "0%";
-        this.div.style.opacity = "0";
-
-    }
 }
 
-let resetbutton = document.getElementById("resetLayoutButton");
-let container = document.getElementById("base");
-const links = document.getElementById("linksbox").getElementsByClassName("linkcell");
-const iframe = document.getElementById("embedframe");
-const embedDiv = document.getElementById("embedDiv");
+function revert() {
+    iframe.style.width = "";
+    iframe.style.opacity = "0";
+    iframe.style.marginLeft = "";
 
-const linkhandler = new LinksHandler(container, links, iframe, embedDiv, resetbutton);
-linkhandler.revert();
+    container.style.width = "";
+    div.style.width = "0%";
+    div.style.opacity = "0";
+    div.style.marginLeft = "";
+
+}
+// get button links and bind onclick
+var button;
+for (let i = 0; i < links.length; i++) {
+    button = links[i];
+    if ("link" in button.dataset) {
+        console.log(button.dataset.link);
+        button.onclick = () => selectSrc(i);
+    }
+}
+resetbutton.onclick = () => revert();
+
+
+revert();

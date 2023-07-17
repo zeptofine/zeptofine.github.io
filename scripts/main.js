@@ -6,86 +6,82 @@ const interleave = ([x, ...xs], ...rest) =>
             : interleave(...rest)              // inductive: no x, some rest
         : [x, ...interleave(...rest, xs)];  // inductive: some x, some rest
 
-class TableHandler {
-    constructor(tables, box) {
-        this.tables = tables;
-        this.selected;
 
-        // Create buttons to operate the tables
-        let listdiv = document.createElement('div');
-        listdiv.id = "buttonbox";
-        listdiv.className = "row";
-
-        this.buttons = this.createTableButtons();
-        console.log("created buttons", this.buttons);
-        Array.from(this.interleaveDots(this.buttons)).forEach(element => {
-            listdiv.appendChild(element)
-        });
-        box.insertBefore(listdiv, box.firstChild);
-    }
-
-    createTableButtons() {
-        let newdivs = [];
-        var table;
-        for (let i = 0; i < this.tables.length; i++) {
-            table = this.tables[i];
-            console.assert(true, 'name' in table.dataset);
-            if ('name' in table.dataset) {
-                var newdiv = document.createElement('button');
-                newdiv.type = "button";
-                newdiv.textContent = table.dataset.name;
-                newdiv.onclick = () => handler.open(i);
-                newdivs.push(newdiv);
-            }
+function createTableButtons() {
+    let newdivs = [];
+    var table;
+    for (let i = 0; i < tables.length; i++) {
+        table = tables[i];
+        console.assert(true, 'name' in table.dataset);
+        if ('name' in table.dataset) {
+            var newdiv = document.createElement('button');
+            newdiv.type = "button";
+            newdiv.textContent = table.dataset.name;
+            newdiv.onclick = () => open(i);
+            newdivs.push(newdiv);
         }
-        return newdivs;
     }
+    return newdivs;
+}
 
-    interleaveDots(divs) {
-        let dots = [];
-        var dot;
-        for (let i = 1; i < divs.length; i++) {
-            dot = document.createElement("div");
-            dot.className = "dot";
-            dots.push(dot);
-        }
-        return interleave(divs, dots);
+
+function interleaveDots(divs) {
+    let dots = [];
+    var dot;
+    for (let i = 1; i < divs.length; i++) {
+        dot = document.createElement("div");
+        dot.className = "dot";
+        dots.push(dot);
     }
+    return interleave(divs, dots);
+}
 
-    open(sel) {
-        if (this.tables[sel] === this.selected) {
-            console.log("table already selected");
-            return;
-        }
-        for (let i = 0; i < this.tables.length; i++) {
-            if (i == sel) {
-                this.tables[i].style.width = "100%";
-                this.tables[i].style.opacity = "1";
-                this.tables[i].classList.add("flash-inner");
+const tables = document.getElementById("tablesdiv").getElementsByClassName("tables");
+let selected;
+let listdiv = document.getElementById("buttonbox");
+let buttons = createTableButtons();
 
-                this.buttons[i].style.letterSpacing = "2px";
-                this.buttons[i].style.color = "white";
-                this.buttons[i].classList.add("bolder");
+Array.from(interleaveDots(buttons)).forEach(element => listdiv.appendChild(element));
 
-                this.selected = this.tables[i];
-                console.log("selected ", this.selected);
-            } else {
-                this.tables[i].style.width = "0px";
-                this.tables[i].style.opacity = "0";
-                this.tables[i].classList.remove("flash-inner");
-                this.buttons[i].classList.add("bolder");
+function open(sel) {
+    if (tables[sel] === selected)
+        return;
 
-                this.buttons[i].style.letterSpacing = "";
-                this.buttons[i].style.color = "";
-                this.buttons[i].classList.remove("bolder");
-            }
+    var table;
+    for (let i = 0; i < tables.length; i++) {
+        if (i == sel) {
+            table = tables[i];
+            table.style.width = "";
+            table.style.opacity = "1";
+            pulseanimation(table, "flash-inner");
+
+            buttons[i].style.letterSpacing = "2px";
+            buttons[i].style.color = "white";
+            buttons[i].classList.add("bolder");
+
+            selected = tables[i];
+        } else {
+            tables[i].style.width = "0px";
+            tables[i].style.opacity = "0";
+            buttons[i].classList.add("bolder");
+
+            buttons[i].style.letterSpacing = "";
+            buttons[i].style.color = "";
+            buttons[i].classList.remove("bolder");
         }
     }
 }
-const handler = new TableHandler(
-    document.getElementById("tablesdiv").getElementsByClassName("tables"),
-    document.getElementById("tablebox"),
-);
-handler.open(0);
 
-console.log(handler);
+open(0);
+
+for (let i = 0; i < buttons.length; i++) {
+    buttons[i].addEventListener("keydown", (event) => {
+        console.log(event);
+    })
+}
+
+document.addEventListener("keydown", (event) => {
+    if (isFinite(event.key) && event.key <= buttons.length) { // is a number
+        open(event.key - 1);
+    }
+})
