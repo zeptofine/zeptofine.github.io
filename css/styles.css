@@ -1,21 +1,21 @@
 :root {
     --col-bloom: rgb(253, 228, 255);
-    --col-text-1: #f6caca;
-    --col-text-button: #e79191;
+    --col-text-1: #d6caf6;
+    --col-text-button: #9391e7;
     --col-links: #feffe8;
-    --col-base-border: #b57e66;
-    --col-sub-border: #744734;
-    --col-background: #614E46;
-    --col-basewin: #473933;
-    --col-shadow: #1b1714cc;
-    --col-darker: #382d29;
-    --col-darkest: #25201d;
+    --col-base-border: #9566b5;
+    --col-sub-border: #56326e;
+    --col-background: #292533;
+    --col-basewin: #221e2b;
+    --col-shadow: #130618b0;
+    --col-darker: #211a29;
+    --col-darkest: #191422;
     --easer: cubic-bezier(0.19, 1, 0.22, 1);
     --border-radius-1: 5px;
     --border-radius-2: 10px;
     --border-radius-3: 20px;
-    --dot-color: #53423b;
-    --outline-thickness: 2.5px;
+    --dot-color: #453b53;
+    --outline-thickness: 2px;
     --gap: 10px;
 }
 
@@ -230,12 +230,11 @@ a:visited {
 }
 
 #base {
-    width: calc(min(100%, 900px));
+    width: calc(min(100%, 960px));
     padding: var(--gap);
     background-color: var(--col-basewin);
     box-sizing: border-box;
     overflow-y: auto;
-
 
     -webkit-border-radius: var(--border-radius-3);
     border-radius: var(--border-radius-3);
@@ -260,9 +259,10 @@ a:visited {
 }
 
 #profilepic {
-    width: 256px;
-    height: 256px;
+    width: 300px;
+    height: 300px;
     object-fit: cover;
+    background-color: black;
     outline: var(--outline-thickness) solid white;
     animation:
         500ms var(--easer) 0.2 flash_outline,
@@ -347,7 +347,7 @@ a:visited {
     overflow-x: auto;
     text-overflow: clip;
     overflow-y: auto;
-    
+
     -webkit-border-radius: var(--border-radius-1);
     border-radius: var(--border-radius-1);
 
