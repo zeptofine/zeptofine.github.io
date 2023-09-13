@@ -16,7 +16,7 @@ function selectSrc(idx) {
     let button = links[idx];
     let dataset = button.dataset;
 
-    div.style.width = "40%";
+    div.style.width = "var(--width-controller)";
     div.style.opacity = "1";
     div.style.marginLeft = "var(--gap)";
     if (iframe.src != links[idx].dataset.link) {
@@ -40,15 +40,9 @@ function selectSrc(idx) {
 }
 
 function revert() {
-    iframe.style.width = "";
-    iframe.style.opacity = "0";
-    iframe.style.marginLeft = "";
-
-    container.style.width = "";
     div.style.width = "0%";
     div.style.opacity = "0";
     div.style.marginLeft = "";
-
 }
 // get button links and bind onclick
 var button;

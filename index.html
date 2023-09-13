@@ -17,13 +17,10 @@
     <base target="_blank">
     <div id="marginprovider" class="row gapless">
         <div id="container" class="row gapless">
-            <div id="base" class="row outlined boxed-inset fullheight gapless">
-
+            <div id="base" class="row outlined fullheight gapless">
                 <div id="pfbox" class="column fullheight fullwidth">
-                    <div class="row">
-                        <img id="profilepic" src="images/profile.png" title="Hey, that's my icon!"
-                            alt="profile picture lmao" decoding="async">
-                        <div id="info" class="outlined boxed-inset nowrap">
+                    <div id="profile" class="row gapless">
+                        <div id="infobox" class="outlined boxed-inset nowrap ">
                             <h2 id="hello">Hi! I'm Zeptofine</h2>
                             <hr>
                             <p>I'm an amateur Python, Java, Shell scripter / programmer. </p>
@@ -36,17 +33,18 @@
                     <div id="tablebox" class="outlined boxed-inset">
                         <div id="buttonbox" class="row"></div>
                         <div id="tablesdiv" class="gapless row fullheight fullwidth">
-                            <div id="contactbox" class="tables outlined boxed-inset sharp-top" data-name="Social">
-                                <ul>
+                            <div id="contactbox" class="tables outlined boxed-inset sharp-tl sharp-tr"
+                                data-name="Social" data-height=4>
+                                <ul class="column gapless">
                                     <li><a href="https://github.com/zeptofine">GitHub (zeptofine)</a></li>
                                     <li><a href="https://www.youtube.com/@zeptofine">Youtube (Zeptofine)</a></li>
                                     <li><a href="https://discord.com/users/254947853074432001">Discord (zeptofine)</a>
                                     </li>
                                 </ul>
                             </div>
-                            <div id="linksbox" class="tables outlined boxed-inset sharp-top" data-name="Projects"
-                                data-height=6>
-                                <button id="CIMUTILS" class="linkcell outlined-hovered"
+                            <div id="linksbox" class="tables outlined boxed-inset sharp-tl sharp-tr"
+                                data-name="Projects" data-height="6">
+                                <button id="CIMUTILS" class="linkcell outlined-hovered whitetext"
                                     data-link="https://zeptofine.github.io/Console_Image_Utils"
                                     data-source="https://github.com/zeptofine/Console_Image_Utils">
                                     <div class="row blurred-background boxed-inset fullwidth fullheight">
@@ -62,7 +60,7 @@
                                         <p>A small-ish pixelsorter script i made to learn.</p>
                                     </div>
                                 </button>
-                                <button id="TH264" class="linkcell outlined-hovered"
+                                <button id="TH264" class="linkcell outlined-hovered whitetext"
                                     data-link="https://zeptofine.github.io/TurnH264/"
                                     data-source="https://github.com/zeptofine/TurnH264">
                                     <div class="row blurred-background boxed-inset fullwidth fullheight">
@@ -71,7 +69,10 @@
                                     </div>
                                 </button>
                             </div>
-                            <!-- <div id="gallerybox" class="tables outlined boxed-inset sharp-top" data-name="Gallery" data-height=100 data-width=100></div> -->
+                            <!-- <div id="gallerybox" class="tables outlined boxed-inset sharp-tl sharp-tr" data-name="Gallery"
+                                data-height=100 data-width=100>
+
+                            </div> -->
                         </div>
                     </div>
                 </div>

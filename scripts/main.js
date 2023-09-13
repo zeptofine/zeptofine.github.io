@@ -52,9 +52,8 @@ function open(sel) {
     for (let i = 0; i < tables.length; i++) {
         table = tables[i];
         if (i == sel) {
-            table.style.width = "";
-            table.style.opacity = "1";
             pulseanimation(table, "flash-inner");
+            table.classList.remove("collapsed");
 
             buttons[i].style.letterSpacing = "2px";
             buttons[i].style.color = "white";
@@ -69,8 +68,7 @@ function open(sel) {
 
         } else {
             buttons[i].classList.toggle("bolder");
-            table.style.width = "0px";
-            table.style.opacity = "0";
+            table.classList.add("collapsed");
 
             buttons[i].style.letterSpacing = "";
             buttons[i].style.color = "";
