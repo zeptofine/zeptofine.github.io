@@ -15,63 +15,68 @@
 
 <body>
     <base target="_blank">
-    <div id="container" class="row gapless">
-        <div id="base" class="row outlined boxed-inset fullheight gapless">
+    <div id="marginprovider" class="row gapless">
+        <div id="container" class="row gapless">
+            <div id="base" class="row outlined boxed-inset fullheight gapless">
 
-            <div id="pfbox" class="column fullheight fullwidth">
-                <div class="row">
-                    <img id="profilepic" src="images/profile.png" title="Hey, that's my icon!"
-                        alt="profile picture lmao" decoding="async">
-                    <div id="info" class="outlined boxed-inset nowrap">
-                        <h2 id="hello">Hi! I'm Zeptofine</h2>
-                        <hr>
-                        <p>I'm an amateur Python, Java, Shell scripter / programmer. </p>
-                        <p>I know some html, css, and js (enough to make this site).</p>
-                        <hr>
-                        <p>she / her / they / them</p>
-                        <p>I hope you enjoy your stay.</p>
-                    </div>
-                </div>
-                <div id="tablebox" class="outlined boxed-inset">
-                    <div id="buttonbox" class="row"></div>
-                    <div id="tablesdiv" class="gapless row fullheight fullwidth">
-                        <div id="tmpbox" class="tables outlined boxed-inset sharp-top" data-name="Social">
-                            <ul>
-                                <li><a href="https://github.com/zeptofine">GitHub (zeptofine)</a></li>
-                                <li><a href="https://www.youtube.com/@zeptofine">Youtube (Zeptofine)</a></li>
-                                <li><a href="https://discord.com/users/254947853074432001">Discord (zeptofine)</a></li>
-                            </ul>
+                <div id="pfbox" class="column fullheight fullwidth">
+                    <div class="row">
+                        <img id="profilepic" src="images/profile.png" title="Hey, that's my icon!"
+                            alt="profile picture lmao" decoding="async">
+                        <div id="info" class="outlined boxed-inset nowrap">
+                            <h2 id="hello">Hi! I'm Zeptofine</h2>
+                            <hr>
+                            <p>I'm an amateur Python, Java, Shell scripter / programmer. </p>
+                            <p>I know some html, css, and js (enough to make this site).</p>
+                            <hr>
+                            <p>she / her / they / them</p>
+                            <p>I hope you enjoy your stay.</p>
                         </div>
-                        <div id="linksbox" class="tables outlined boxed-inset sharp-top" data-name="Links">
-                            <button id="CIMUTILS" class="linkcell outlined-hovered"
-                                data-link="https://zeptofine.github.io/Console_Image_Utils"
-                                data-source="https://github.com/zeptofine/Console_Image_Utils">
-                                <div class="row blurred-background boxed-inset fullwidth fullheight">
-                                    <p>Console_Image_Utils:</p>
-                                    <p>A set of utilities to help with managing images</p>
-                                </div>
-                            </button>
-                            <button id="PXSORTER" class="linkcell outlined-hovered"
-                                data-link="https://zeptofine.github.io/pixelsorter"
-                                data-source="https://github.com/zeptofine/pixelsorter">
-                                <div class="row blurred-background boxed-inset fullwidth fullheight">
-                                    <p>Pixelsorter:</p>
-                                    <p>A small-ish pixelsorter script i made to learn.</p>
-                                </div>
-                            </button>
-                            <button id="TH264" class="linkcell outlined-hovered"
-                                data-link="https://zeptofine.github.io/TurnH264/"
-                                data-source="https://github.com/zeptofine/TurnH264">
-                                <div class="row blurred-background boxed-inset fullwidth fullheight">
-                                    <p>TurnH264: </p>
-                                    <p>A TurnH264 fork with a lot of changes</p>
-                                </div>
-                            </button>
+                    </div>
+                    <div id="tablebox" class="outlined boxed-inset">
+                        <div id="buttonbox" class="row"></div>
+                        <div id="tablesdiv" class="gapless row fullheight fullwidth">
+                            <div id="contactbox" class="tables outlined boxed-inset sharp-top" data-name="Social">
+                                <ul>
+                                    <li><a href="https://github.com/zeptofine">GitHub (zeptofine)</a></li>
+                                    <li><a href="https://www.youtube.com/@zeptofine">Youtube (Zeptofine)</a></li>
+                                    <li><a href="https://discord.com/users/254947853074432001">Discord (zeptofine)</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div id="linksbox" class="tables outlined boxed-inset sharp-top" data-name="Projects"
+                                data-height=6>
+                                <button id="CIMUTILS" class="linkcell outlined-hovered"
+                                    data-link="https://zeptofine.github.io/Console_Image_Utils"
+                                    data-source="https://github.com/zeptofine/Console_Image_Utils">
+                                    <div class="row blurred-background boxed-inset fullwidth fullheight">
+                                        <p>Console_Image_Utils:</p>
+                                        <p>A set of utilities to help with managing images</p>
+                                    </div>
+                                </button>
+                                <button id="PXSORTER" class="linkcell outlined-hovered"
+                                    data-link="https://zeptofine.github.io/pixelsorter"
+                                    data-source="https://github.com/zeptofine/pixelsorter">
+                                    <div class="row blurred-background boxed-inset fullwidth fullheight">
+                                        <p>Pixelsorter:</p>
+                                        <p>A small-ish pixelsorter script i made to learn.</p>
+                                    </div>
+                                </button>
+                                <button id="TH264" class="linkcell outlined-hovered"
+                                    data-link="https://zeptofine.github.io/TurnH264/"
+                                    data-source="https://github.com/zeptofine/TurnH264">
+                                    <div class="row blurred-background boxed-inset fullwidth fullheight">
+                                        <p>TurnH264: </p>
+                                        <p>A TurnH264 fork with a lot of changes</p>
+                                    </div>
+                                </button>
+                            </div>
+                            <!-- <div id="gallerybox" class="tables outlined boxed-inset sharp-top" data-name="Gallery" data-height=100 data-width=100></div> -->
                         </div>
                     </div>
                 </div>
             </div>
-            <div id="embedbox" class="column sharp fullheight">
+            <div id="embedbox" class="column sharp">
                 <div class="row fullwidth">
                     <button id="resetLayoutButton" class="row">
                         <span class="material-symbols-outlined">
@@ -80,13 +85,13 @@
                     </button>
                     <a id="source"></a>
                 </div>
-                <iframe id="embedframe" src="" class="boxed-inset outlined"
-                    sandbox="allow-scripts allow-popups"></iframe>
+                <iframe id="embedframe" src="" class="outlined" sandbox="allow-scripts allow-popups">
+                </iframe>
             </div>
         </div>
     </div>
     <script src="scripts/pulseanimation.js"></script>
     <script src="scripts/hideifmobile.js"></script>
-    <script src="scripts/main.js"></script>
     <script src="scripts/links.js"></script>
+    <script src="scripts/main.js"></script>
 </body>

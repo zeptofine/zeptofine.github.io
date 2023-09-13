@@ -17,6 +17,11 @@
     --dot-color: #453b53;
     --outline-thickness: 2px;
     --gap: 10px;
+
+    --height-multiplier: 5;
+    --width-multiplier: 8;
+    --height-controller: calc(min(var(--height-multiplier) * 120px, 100%));
+    --width-controller: calc(min(var(--width-multiplier) * 120px, 100%));
 }
 
 /*   To reference these: var(*)            */
@@ -220,17 +225,23 @@ a:visited {
     overflow: hidden;
 }
 
-#container {
+#marginprovider {
     position: absolute;
     left: 10px;
-    top: calc(max(50% - 360px, 10px));
+    top: 10px;
     width: calc(100% - 20px);
-    height: calc(min(100% - 20px, 720px));
+    height: calc(100% - 20px);
+}
 
+#container {
+    width: 100%;
+    height: 100%;
+    transition: 1s cubic-bezier(0.19, 1, 0.22, 1) all;
 }
 
 #base {
-    width: calc(min(100%, 960px));
+    height: var(--height-controller);
+    width: var(--width-controller);
     padding: var(--gap);
     background-color: var(--col-basewin);
     box-sizing: border-box;
@@ -253,7 +264,7 @@ a:visited {
     grid-column: 2;
     grid-row: 1;
     width: 0%;
-    height: calc(min(100%, 720px));
+    height: var(--height-controller);
     transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
     text-overflow: clip;
 }
@@ -287,7 +298,7 @@ a:visited {
 #tablebox {
     display: grid;
     grid-template-columns: 100%;
-    grid-template-rows: 1fr 6fr;
+    grid-template-rows: 50px 8fr;
 
     height: 100%;
     width: 100%;
@@ -298,10 +309,6 @@ a:visited {
     justify-content: left;
 }
 
-#buttonbox {
-    width: 100%;
-    justify-content: space-evenly;
-}
 
 #contactbox {
     width: 100%;
@@ -339,7 +346,7 @@ a:visited {
 }
 
 .linkcell {
-    height: 50%;
+    height: 40%;
     width: calc(100% - (var(--gap) * 2));
     background-size: cover;
     background-position: center;

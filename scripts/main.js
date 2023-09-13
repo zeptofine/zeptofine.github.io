@@ -43,14 +43,15 @@ let buttons = createTableButtons();
 
 Array.from(interleaveDots(buttons)).forEach(element => listdiv.appendChild(element));
 
+root = document.querySelector(":root");
 function open(sel) {
     if (tables[sel] === selected)
         return;
 
     var table;
     for (let i = 0; i < tables.length; i++) {
+        table = tables[i];
         if (i == sel) {
-            table = tables[i];
             table.style.width = "";
             table.style.opacity = "1";
             pulseanimation(table, "flash-inner");
@@ -59,15 +60,20 @@ function open(sel) {
             buttons[i].style.color = "white";
             buttons[i].classList.add("bolder");
 
-            selected = tables[i];
+            selected = table;
+
+
+            root.style.setProperty("--height-multiplier", ("height" in table.dataset) ? table.dataset.height : "");
+            root.style.setProperty("--width-multiplier", ("width" in table.dataset) ? table.dataset.width : "");
+
+
         } else {
-            tables[i].style.width = "0px";
-            tables[i].style.opacity = "0";
-            buttons[i].classList.add("bolder");
+            buttons[i].classList.toggle("bolder");
+            table.style.width = "0px";
+            table.style.opacity = "0";
 
             buttons[i].style.letterSpacing = "";
             buttons[i].style.color = "";
-            buttons[i].classList.remove("bolder");
         }
     }
 }

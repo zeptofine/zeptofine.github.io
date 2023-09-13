@@ -16,7 +16,7 @@ function selectSrc(idx) {
     let button = links[idx];
     let dataset = button.dataset;
 
-    div.style.width = "100%";
+    div.style.width = "40%";
     div.style.opacity = "1";
     div.style.marginLeft = "var(--gap)";
     if (iframe.src != links[idx].dataset.link) {
@@ -34,7 +34,6 @@ function selectSrc(idx) {
     }
     iframe.style.opacity = "1";
 
-    container.style.width = "calc(min(100%, 1350px))";
     
     console.log("selected source: ", links[idx]);
 
