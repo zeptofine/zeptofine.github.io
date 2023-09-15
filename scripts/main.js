@@ -37,11 +37,14 @@ function interleaveDots(divs) {
 }
 
 const tables = document.getElementById("tablesdiv").getElementsByClassName("tables");
+const url = new URL(window.location.href);
+
 let selected;
 let listdiv = document.getElementById("buttonbox");
 let buttons = createTableButtons();
 
 Array.from(interleaveDots(buttons)).forEach(element => listdiv.appendChild(element));
+
 
 root = document.querySelector(":root");
 function open(sel) {
@@ -65,6 +68,9 @@ function open(sel) {
             root.style.setProperty("--height-multiplier", ("height" in table.dataset) ? table.dataset.height : "");
             root.style.setProperty("--width-multiplier", ("width" in table.dataset) ? table.dataset.width : "");
 
+            url.searchParams.set("idx", sel);
+            window.history.pushState({}, document.title, url.href)
+            console.log(url.href)
 
         } else {
             buttons[i].classList.remove("bolder");
@@ -76,10 +82,16 @@ function open(sel) {
     }
 }
 
-open(0);
+idx = new URLSearchParams(url.search).get("idx")
+if (idx === null) {
+    open(0);
+} else {
+    open(idx);
+}
 
-for (let i = 0; i < buttons.length; i++) {
-    buttons[i].addEventListener("keydown", (event) => {
+
+for (const button of buttons) {
+    button.addEventListener("keydown", (event) => {
         console.log(event);
     })
 }

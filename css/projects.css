@@ -3,31 +3,27 @@
     height: 100%;
 }
 
-
-.buttonlist {
+#projectlinks {
+    width: 50%;
     height: 100%;
-    width: 75%;
-    overflow-y: scroll;
-    overflow: auto;
-
 }
 
 
+
+
 .linkcell {
-    height: 20%;
-    width: calc(100% - (var(--gap) * 2));
+    height: 120px;
+    width: 100%;
     background-size: cover;
     background-position: center;
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
     text-overflow: clip;
-    overflow-y: hidden;
 
     -webkit-border-radius: var(--border-radius-1);
     border-radius: var(--border-radius-1);
     white-space: nowrap;
-    margin-left: var(--gap);
-    margin-top: calc(var(--gap) / 2);
-    margin-bottom: calc(var(--gap) / 2);
+    margin-top: var(--gap) / 2;
+    margin-bottom: var(--gap);
 }
 
 .linkcell-div {
@@ -37,11 +33,11 @@
 
 
 .linkcell:is(:nth-child(1)) {
-    margin-top: var(--gap)
+    margin-top: 0;
 }
 
 .linkcell:is(:nth-last-child(1)) {
-    margin-bottom: var(--gap)
+    margin-bottom: 0
 }
 
 .linkcell * {
@@ -56,10 +52,6 @@
 #embedbox {
     height: 100%;
     width: 100%;
-    box-sizing: border-box;
-    padding: var(--gap);
-    padding-inline: var(--gap);
-    gap: var(--gap)
 }
 
 #embedframe {
@@ -75,12 +67,6 @@
     animation: flash_inner 250ms var(--easer);
 }
 
-
-.collapsed {
-    width: 0px;
-    height: 0px;
-    opacity: 0;
-}
 
 
 #source {
