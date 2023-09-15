@@ -21,20 +21,19 @@ function selectSrc(idx) {
 
     if (iframe.src != links[idx].dataset.link) {
         iframe.src = dataset.link;
+        iframe.title = dataset.link;
+
+        if ("source" in dataset) {
+            pulseanimation(sourceLink, "flash-inner");
+            sourceLink.href = dataset.source;
+            sourceLink.text = sourceLink.href;
+        } else {
+            sourceLink.text = "";
+        }
+
+
+        console.log("selected source: ", links[idx]);
     }
-
-    if ("source" in dataset) {
-        pulseanimation(sourceLink, "flash-inner");
-        sourceLink.href = dataset.source;
-
-        sourceLink.text = sourceLink.href;
-        sourceLink.style.height = "";
-    } else {
-        sourceLink.style.height = "0%";
-    }
-
-    
-    console.log("selected source: ", links[idx]);
 
 }
 

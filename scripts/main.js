@@ -67,7 +67,7 @@ function open(sel) {
 
 
         } else {
-            buttons[i].classList.toggle("bolder");
+            buttons[i].classList.remove("bolder");
             table.classList.add("collapsed");
 
             buttons[i].style.letterSpacing = "";
