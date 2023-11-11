@@ -201,10 +201,6 @@ a:visited {
 }
 
 @supports (backdrop-filter: blur(10px)) {
-  #container {
-    -webkit-backdrop-filter: blur(64px);
-    backdrop-filter: blur(64px);
-  }
 
   #base {
     -webkit-backdrop-filter: blur(64px);
@@ -224,7 +220,7 @@ a:visited {
   width: calc(100% - 20px);
   height: calc(100% - 20px);
 
-  background-image: url("../images/profile.png");
+  background-image: url("../images/background.png");
   background-size: cover;
   background-position: center;
   background-color: black;
