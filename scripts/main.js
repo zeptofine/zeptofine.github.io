@@ -86,7 +86,7 @@ function open(sel) {
 
 // Search Parameter Handler 
 idx = new URLSearchParams(url.search).get("idx")
-if (idx !== null || !open(idx)) {
+if (idx === null || !open(idx)) {
     open(0);
 }
 
