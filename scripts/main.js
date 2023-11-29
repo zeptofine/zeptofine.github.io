@@ -2,9 +2,9 @@
 const interleave = ([x, ...xs], ...rest) =>
     x === undefined
         ? rest.length === 0
-            ? []                                // base: no x, no rest
-            : interleave(...rest)              // inductive: no x, some rest
-        : [x, ...interleave(...rest, xs)];  // inductive: some x, some rest
+            ? []                             // base: no x, no rest
+            : interleave(...rest)           // inductive: no x, some rest
+        : [x, ...interleave(...rest, xs)]; // inductive: some x, some rest
 
 
 function createTableButtons() {
@@ -25,7 +25,7 @@ function createTableButtons() {
 }
 
 
-function interleaveDots(divs) {
+function interleaveSeparators(divs) {
     let dots = [];
     var dot;
     for (let i = 1; i < divs.length; i++) {
@@ -43,13 +43,13 @@ let selected;
 let listdiv = document.getElementById("buttonbox");
 let buttons = createTableButtons();
 
-Array.from(interleaveDots(buttons)).forEach(element => listdiv.appendChild(element));
+Array.from(interleaveSeparators(buttons)).forEach(element => listdiv.appendChild(element));
 
 
 root = document.querySelector(":root");
 function open(sel) {
     if (tables[sel] === selected)
-        return;
+        return false;
 
     var table;
     for (let i = 0; i < tables.length; i++) {
@@ -80,15 +80,15 @@ function open(sel) {
             buttons[i].style.color = "";
         }
     }
+    return true;
 }
 
+
+// Search Parameter Handler 
 idx = new URLSearchParams(url.search).get("idx")
-if (idx === null) {
+if (idx !== null || !open(idx)) {
     open(0);
-} else {
-    open(idx);
 }
-
 
 for (const button of buttons) {
     button.addEventListener("keydown", (event) => {
