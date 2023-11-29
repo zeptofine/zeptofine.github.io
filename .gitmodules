@@ -1,4 +1,4 @@
 [submodule "Blender-Launcher-V2"]
 	path = Blender-Launcher-V2
 	url = https://github.com/Victor-IX/Blender-Launcher-V2.git
-	branch = pages
+	branch = gh-pages
