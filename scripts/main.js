@@ -48,7 +48,7 @@ Array.from(interleaveSeparators(buttons)).forEach(element => listdiv.appendChild
 
 root = document.querySelector(":root");
 function open(sel) {
-    if (tables[sel] === selected)
+    if (tables.length < sel || tables[sel] === selected)
         return false;
 
     var table;
@@ -86,8 +86,13 @@ function open(sel) {
 
 // Search Parameter Handler 
 idx = new URLSearchParams(url.search).get("idx")
-if (idx === null || !open(idx)) {
+if (idx === null) {
     open(0);
+} else {
+    if (tables.length > idx)
+        open(idx);
+    else
+        open(0);
 }
 
 for (const button of buttons) {
