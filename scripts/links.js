@@ -1,13 +1,12 @@
 
 
 const container = document.getElementById("base");
-const links = document.getElementById("linksbox").getElementsByClassName("linkcell");
+const links = Array.from(document.getElementById("linksbox").getElementsByClassName("linkcell"));
 const iframe = document.getElementById("embedframe");
 const div = document.getElementById("embedbox");
 
 const sourceLink = document.getElementById("source");
 const linkParagraph = document.getElementById("link");
-
 
 function selectSrc(idx) {
 
@@ -19,7 +18,10 @@ function selectSrc(idx) {
     let button = links[idx];
     let dataset = button.dataset;
 
-    if (iframe.src != links[idx].dataset.link) {
+    
+
+
+    if (iframe.src != button.dataset.link) {
         iframe.src = dataset.link;
         iframe.title = dataset.link;
 
@@ -30,9 +32,17 @@ function selectSrc(idx) {
         } else {
             sourceLink.text = "";
         }
+        
+        links.forEach(  (b) => {
+            if (b !== button) {
+                b.classList.remove("selected");
+            } else {
+                b.classList.add("selected")
+            }
+        }
+        );
 
-
-        console.log("selected source: ", links[idx]);
+        console.log("selected source: ", button);
     }
 
 }
