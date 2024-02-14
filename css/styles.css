@@ -20,8 +20,8 @@
   --gap: 10px;
 
 
-  --height-multiplier: 6;
-  --width-multiplier: 6;
+  --height-multiplier: 4;
+  --width-multiplier: 5;
   --height-controller: calc(min(var(--height-multiplier) * 120px, 100%));
   --width-controller: calc(min(var(--width-multiplier) * 120px, 100%));
 }
