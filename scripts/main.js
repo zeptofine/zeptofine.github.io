@@ -15,6 +15,7 @@ function createTableButtons() {
         console.assert(true, 'name' in table.dataset);
         if ('name' in table.dataset) {
             var newdiv = document.createElement('button');
+            newdiv.classList = ["fonted"];
             newdiv.type = "button";
             newdiv.textContent = table.dataset.name;
             newdiv.onclick = () => open(i);

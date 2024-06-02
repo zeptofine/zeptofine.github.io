@@ -5,7 +5,7 @@
   --col-links: #feffe8;
   --col-selected: white;
   --col-base-border: #9566b5;
-  --col-sub-border: #61407744;
+  --col-sub-border: #a37abe21;
   --col-background: #2b2342;
   --col-shadow: #13061845;
   --col-table-buttons: #322640d1;
@@ -29,16 +29,15 @@
 /*   To reference these: var(*)            */
 /*   var(--col-background); var(--easer)   */
 
-@font-face {
-  font-family: Roboto;
-  src: url(../fonts/Roboto-Regular.ttf);
+.fonted {
+  font-family: Raleway;
 }
 
 
 body {
   background-color: var(--col-background);
   color: var(--col-text-1);
-  font-family: Roboto;
+  font-family: Raleway;
 }
 
 div,
@@ -125,10 +124,10 @@ a:visited {
 .column {
   display: flex;
   flex-direction: column;
-  align-content: flex-start;
-  align-items: flex-start;
-  justify-content: flex-start;
-  justify-items: flex-start;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
   flex-wrap: nowrap;
 
   gap: var(--gap);
@@ -260,7 +259,7 @@ a:visited {
 }
 
 #tablesdiv {
-  overflow-y:auto;
+  overflow-y: auto;
 }
 
 .tables {
@@ -288,10 +287,11 @@ a:visited {
   background-color: black;
   outline: var(--outline-thickness) solid white;
   animation:
-      500ms var(--easer) 0.2 flash_outline,
-      1.5s var(--easer) 0s profileintro;
+    500ms var(--easer) 0.2 flash_outline,
+    1.5s var(--easer) 0s profileintro;
 
 }
+
 
 
 .infobox {
@@ -330,13 +330,13 @@ a:visited {
 
 .image {
   width: 100%;
-  height:200px;
+  height: 200px;
   background-size: cover;
   background-color: black;
 }
 
 #featured-images {
-    height: 100%;
+  height: 100%;
 }
 
 
