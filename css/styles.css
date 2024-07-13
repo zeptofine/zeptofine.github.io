@@ -194,18 +194,6 @@ a:visited {
   padding-block: var(--gap);
 }
 
-@supports (backdrop-filter: blur(10px)) {
-
-  #base {
-    -webkit-backdrop-filter: blur(64px);
-    backdrop-filter: blur(64px);
-  }
-
-  .linkcell div {
-    -webkit-backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px);
-  }
-}
 
 #marginprovider {
   position: absolute;
