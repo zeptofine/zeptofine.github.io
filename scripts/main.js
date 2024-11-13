@@ -18,7 +18,7 @@ function createTableButtons() {
             newdiv.classList = ["fonted"];
             newdiv.type = "button";
             newdiv.textContent = table.dataset.name;
-            newdiv.onclick = () => open(i);
+            newdiv.onclick = () => open(i, true);
             newdivs.push(newdiv);
         }
     }
@@ -48,7 +48,7 @@ Array.from(interleaveSeparators(buttons)).forEach(element => listdiv.appendChild
 
 
 root = document.querySelector(":root");
-function open(sel) {
+function open(sel, clicked) {
     if (tables.length < sel || tables[sel] === selected)
         return false;
 
@@ -65,12 +65,13 @@ function open(sel) {
 
             selected = table;
 
-
             root.style.setProperty("--height-multiplier", ("height" in table.dataset) ? table.dataset.height : "");
             root.style.setProperty("--width-multiplier", ("width" in table.dataset) ? table.dataset.width : "");
 
             url.searchParams.set("idx", sel);
-            window.history.pushState({}, document.title, url.href)
+            if (clicked)
+                window.history.pushState({}, document.title, url.href);
+
             console.log(url.href)
 
         } else {
@@ -85,17 +86,6 @@ function open(sel) {
 }
 
 
-// Search Parameter Handler 
-idx = new URLSearchParams(url.search).get("idx")
-if (idx === null) {
-    open(0);
-} else {
-    if (tables.length > idx)
-        open(idx);
-    else
-        open(0);
-}
-
 for (const button of buttons) {
     button.addEventListener("keydown", (event) => {
         console.log(event);
@@ -104,6 +94,23 @@ for (const button of buttons) {
 
 document.addEventListener("keydown", (event) => {
     if (isFinite(event.key) && event.key <= buttons.length) { // is a number
-        open(event.key - 1);
+        open(event.key - 1, false);
     }
 })
+
+// Search Parameter Handler 
+function monitorSearchParams() {
+    idx = new URLSearchParams(window.location.search).get("idx");
+    if (idx === null) {
+        open(0, false);
+    } else {
+        if (tables.length > idx)
+            open(idx, false);
+        else
+            open(0, false);
+    }
+}
+
+
+monitorSearchParams();
+window.addEventListener('popstate', monitorSearchParams);
