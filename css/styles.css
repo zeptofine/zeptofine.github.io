@@ -211,23 +211,64 @@ a:visited {
     backdrop-filter: blur(16px);
   }
 }
+#background-image {
+  position: absolute;
+  /* background-image: url("../images/background.png"); */
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
 
+.backgroundextra {
+    background-color: black;
+    background-image: url("../images/background.png");
+    opacity: 1;
+    animation: 2s var(--easer) 0s backgroundintro both;
 
+}
+
+@keyframes backgroundintro {
+  0% {
+    opacity: 0;
+    background-position: 0px -20%;
+  }
+}
 
 #marginprovider {
   position: absolute;
-  left: 10px;
-  top: 10px;
-  width: calc(100% - 20px);
-  height: calc(100% - 20px);
+  border-radius: 0px;
+}
 
-  background-image: url("../images/background.png");
-  background-size: cover;
-  background-position: center;
-  background-color: black;
-  background-repeat:no-repeat;
-  border-radius: var(--border-radius-3);
-  animation: 2s var(--easer) 0.2s profileintro both;
+.marginest {
+  /* Initial State */
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+}
+
+.marginextra {
+    left: 10px;
+    top: 10px;
+    width: calc(100% - 20px);
+    height: calc(100% - 20px);
+    background-color: var(--col-background);
+    animation: 1s var(--easer) 0s profileintro both;
+}
+
+@keyframes profileintro {
+  0% {
+    width: 100%;
+    height: 100%;
+    left: 0px;
+    top: 0px;
+    border-radius: 0px;
+  }
+
 }
 
 #container {
@@ -376,29 +417,6 @@ a:visited {
     border-color: white;
   }
 }
-
-@keyframes profileintro {
-  0% {
-    background-color: var(--col-background);
-    background-position: 0px 200px;
-    background-repeat:no-repeat;
-    
-    width: 100%;
-    height: 100%;
-    left: 0px;
-    top: 0px;
-    border-radius: 0px;
-  }
-  
-  /* 50% {
-    
-    left: 10px;
-    top: 10px;
-    width: calc(100% - 20px);
-    height: calc(100% - 20px);
-  } */
-}
-
 
 @keyframes opacityintro {
   0% {

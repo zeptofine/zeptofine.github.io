@@ -46,6 +46,15 @@ let buttons = createTableButtons();
 
 Array.from(interleaveSeparators(buttons)).forEach(element => listdiv.appendChild(element));
 
+// Preload the background image before showing it
+var src = "images/background.png";
+var image = new Image();
+image.addEventListener('load', function () {
+    document.getElementById("marginprovider").classList.add("marginextra");
+    document.getElementById("background-image").classList.add("backgroundextra");
+});
+image.src = src;
+console.log(image);
 
 root = document.querySelector(":root");
 function open(sel, clicked) {
