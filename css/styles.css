@@ -8,8 +8,8 @@
   --col-sub-border: #a37abe21;
   --col-background: #2b2342;
   --col-shadow: #13061845;
-  --col-table-buttons: #322640d1;
-  --col-table-cells: #191422bf;
+  --col-table-buttons: #3226407e;
+  --col-table-cells: #19142283;
   --easer: cubic-bezier(0.19, 1, 0.22, 1);
 
   --border-radius-1: 10px;
@@ -193,6 +193,25 @@ a:visited {
 .pad-y {
   padding-block: var(--gap);
 }
+
+@supports (backdrop-filter: blur(16px)) {
+
+  /* #base {
+    -webkit-backdrop-filter: blur(64px);
+    backdrop-filter: blur(64px);
+  } */
+
+  #buttonbox {
+    -webkit-backdrop-filter: blur(16px);
+    backdrop-filter: blur(16px);
+  }
+
+  .linkcell div {
+    -webkit-backdrop-filter: blur(16px);
+    backdrop-filter: blur(16px);
+  }
+}
+
 
 
 #marginprovider {
