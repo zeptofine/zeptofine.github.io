@@ -20,8 +20,8 @@
   --gap: 10px;
 
 
-  --height-multiplier: 4;
-  --width-multiplier: 5;
+  --height-multiplier: 3;
+  --width-multiplier: 3;
   --height-controller: calc(min(var(--height-multiplier) * 120px, 100%));
   --width-controller: calc(min(var(--width-multiplier) * 120px, 100%));
 }
@@ -231,7 +231,7 @@ a:visited {
 
   background-color: var(--col-shadow);
 
-  animation: flash_outline 750ms var(--easer) 0.4s both, opacityintro 1500ms var(--easer) 0.3s both;
+  animation: flash_outline 750ms var(--easer) 0.5s both, opacityintro 1500ms var(--easer) 0.25s both;
   transition: 1s var(--easer) all;
   display: grid;
   grid-template-columns: 100%;
