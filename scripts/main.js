@@ -94,7 +94,7 @@ for (const button of buttons) {
 
 document.addEventListener("keydown", (event) => {
     if (isFinite(event.key) && event.key <= buttons.length) { // is a number
-        open(event.key - 1, false);
+        open(event.key - 1, true);
     }
 })
 
