@@ -6,6 +6,8 @@
 #projectlinks {
     width: 50%;
     height: 100%;
+
+    scrollbar-width: none;
 }
 
 
@@ -22,6 +24,7 @@
     white-space: nowrap;
     margin-top: var(--gap) / 2;
     margin-bottom: var(--gap);
+    transition: 250ms var(--easer) height;
 }
 
 .linkcell div {
@@ -67,8 +70,8 @@
 
 .selected {
     outline: var(--outline-thickness) solid var(--col-selected);
+    height: 180px;
 }
-
 
 #source {
     width: 100%;
