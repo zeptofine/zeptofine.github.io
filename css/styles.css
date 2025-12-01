@@ -15,7 +15,7 @@
   --border-radius-1: 10px;
   --border-radius-2: 15px;
   --border-radius-3: 20px;
-  --dot-color: #453b53;
+  --dot-color: #635478;
   --outline-thickness: 3px;
   --gap: 10px;
 
@@ -43,15 +43,10 @@ body {
 div,
 button,
 img,
-table,
-iframe {
+table {
   box-sizing: border-box;
   -webkit-border-radius: var(--border-radius-2);
   border-radius: var(--border-radius-2);
-}
-
-iframe {
-  border: none;
 }
 
 button {
@@ -186,6 +181,14 @@ a:visited {
 }
 
 
+.dot-more {
+  width: 10px;
+  height: 10px;
+  background-color: var(--dot-color);
+  border-radius: var(--border-radius-2);
+}
+
+
 .pad-x {
   padding-inline: var(--gap);
 }
@@ -303,7 +306,7 @@ a:visited {
   /* padding-block: var(--gap); */
   border-radius: 0px;
   overflow-y: auto;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
   box-sizing: border-box;
   transition: transform 0.25s cubic-bezier(0.65, 0, 0.35, 1);
 }

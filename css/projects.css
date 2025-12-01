@@ -3,78 +3,55 @@
     height: 100%;
 }
 
-#projectlinks {
-    width: 50%;
-    height: 100%;
-
-    scrollbar-width: none;
+#linksgrid {
+    align-items: center;
+    width: 100%;
+    display: grid;
+    overflow-x: hidden;
+    grid-template-columns: repeat(auto-fill, calc(max(200px, 25% - 10px)));
+    gap: 10px;
+    place-items: center;
+    justify-content: center;
+    grid-auto-rows: max-content;
 }
-
 
 .linkcell {
     height: 120px;
     width: 100%;
+    /* min-width: ; */
     background-size: cover;
     background-position: center;
     /* overflow-x: hidden; */
     text-overflow: clip;
-
     -webkit-border-radius: var(--border-radius-1);
     border-radius: var(--border-radius-1);
     white-space: nowrap;
-    margin-top: var(--gap) / 2;
-    margin-bottom: var(--gap);
+    align-items: center;
+    /* margin-top: var(--gap) / 2;
+    margin-bottom: var(--gap); */
     transition: 250ms var(--easer) height;
 }
 
 .linkcell div {
-    width: 100%;
-    height: 100%;
-}
-
-.linkcell * {
-    -webkit-border-radius: var(--border-radius-1);
-    border-radius: var(--border-radius-1);
+    /* -webkit-border-radius: var(--border-radius-1); */
+    /* border-radius: var(--border-radius-1); */
     overflow-x: hidden;
     text-overflow: clip;
     overflow-y: hidden;
-}
-
-.linkcell:is(:nth-child(1)) {
-    margin-top: 0;
-}
-
-.linkcell:is(:nth-last-child(1)) {
-    margin-bottom: 0
-}
-
-
-#embedbox {
-    height: 100%;
-    width: 100%;
-}
-
-#embedframe {
+    -webkit-border-radius: 0px;
+    border-radius: 0px;
     width: 100%;
     height: 100%;
+    font-size: small;
+    text-align: center;
+    align-items: center;
+}
 
-    -webkit-border-radius: var(--border-radius-1);
-    border-radius: var(--border-radius-1);
+#more {
+    outline-style: dashed;
 }
 
 .flash-inner,
 .flash-inner * {
     animation: flash_inner 250ms var(--easer);
-}
-
-
-.selected {
-    outline: var(--outline-thickness) solid var(--col-selected);
-    height: 180px;
-}
-
-#source {
-    width: 100%;
-    text-overflow: clip;
-    overflow: hidden;
 }

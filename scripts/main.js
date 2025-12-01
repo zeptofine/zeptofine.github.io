@@ -94,13 +94,6 @@ function open(sel, clicked) {
     return true;
 }
 
-
-for (const button of buttons) {
-    button.addEventListener("keydown", (event) => {
-        console.log(event);
-    })
-}
-
 document.addEventListener("keydown", (event) => {
     if (isFinite(event.key) && event.key <= buttons.length) { // is a number
         open(event.key - 1, true);
