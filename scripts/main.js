@@ -95,7 +95,7 @@ function open(sel, clicked) {
 }
 
 document.addEventListener("keydown", (event) => {
-    if (isFinite(event.key) && event.key <= buttons.length) { // is a number
+    if (isFinite(event.key) && event.key <= buttons.length && event.key > 0) { // is a number
         open(event.key - 1, true);
     }
 })
