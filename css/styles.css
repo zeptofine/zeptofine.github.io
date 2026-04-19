@@ -210,6 +210,9 @@ a:visited {
   background-repeat: no-repeat;
 }
 
+.image-transition-before {
+  opacity: 0;
+}
 .image-transition {  
   background-color: black;
   opacity: 1;

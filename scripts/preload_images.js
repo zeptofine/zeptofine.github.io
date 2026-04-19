@@ -19,13 +19,14 @@ m.forEach((v) => {
     var element = document.getElementById(id);
     console.log(element);
 
-    element.classList.add("image-transition")
+    element.classList.add("image-transition-before")
     var image = new Image();
     image.addEventListener('load', () => {
         element.style.backgroundImage = `url("${url}")`;
         if (on_load !== undefined) {
             on_load()
         }
+        element.classList.add("image-transition")
     })
     image.src = url;
     console.log(element);
