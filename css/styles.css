@@ -210,12 +210,10 @@ a:visited {
   background-repeat: no-repeat;
 }
 
-.backgroundextra {
-    background-color: black;
-    background-image: url("../images/background.png");
-    opacity: 1;
-    animation: 2s var(--easer) 0s backgroundintro both;
-
+.image-transition {  
+  background-color: black;
+  opacity: 1;
+  animation: 2s var(--easer) 0s backgroundintro forwards;
 }
 
 @keyframes backgroundintro {
