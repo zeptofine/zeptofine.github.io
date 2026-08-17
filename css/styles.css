@@ -211,18 +211,23 @@ a:visited {
 }
 
 .image-transition-before {
-  opacity: 0;
+  background-color: transparent;
 }
-.image-transition {  
+.image-transition {
   background-color: black;
   opacity: 1;
   animation: 2s var(--easer) 0s backgroundintro forwards;
 }
 
+
 @keyframes backgroundintro {
   0% {
     opacity: 0;
     background-position: 0px -20%;
+  }
+  100% {
+    opacity: 1;
+    background-position: 0px 0px;
   }
 }
 
